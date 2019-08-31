@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<br>
+{% for blog in blogs.all %}
+<div class="card">
+    <ul class="title-body">
+      <li class="list-group-item">&lt;{{blog.title}}&gt;</li>
+      <li class="list-group-item">{{blog.body}}</li>
+    </ul>
+  </div>
+  <br>
+{% endfor %}
+
+{% endblock %}

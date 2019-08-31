@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<head>
+
+<style>
+  ul, li{
+    margin:0; padding: 0;
+  }
+ 
+  #modal {
+  display:none;
+  position:relative;
+  width:100%;
+  height:100%;
+  z-index:1;
+  text-align:left;
+}
+  div {
+    text-align: center;
+  }
+
+  table{ 
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    font-weight: bold;
+    width:100%
+    border-top=1px solid #444444;
+    border-collapse: collapse;
+    min-width : 300px;
+    cell-specing:2;
+  }
+  th{color:white;}
+  th, td{
+    border-bottom: 1px solid #444444;
+    padding:10px;
+    border:4px;
+  }
+  
+
+
+#modal h2 {
+  margin:0;
+}
+
+#modal button {
+  display:inline-block;
+  width:100px;
+  margin-left:calc(100% - 100px - 10px);
+}
+::webkit-scrollbar-{
+  display: none;
+}
+#modal .modal_content {
+  
+  width:600px;
+  height:550px;
+  margin:20px auto;
+  padding:20px 10px;
+  background:rgb(182, 180, 180);
+  border:2px solid #666;
+  color:black;
+  z-index:-1;
+}
+
+#modal .modal_layer {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index:-1;
+}
+body{
+  background-image : url("../static/main2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
+</head>
+
+<body>
+<div id="modal">
+
+    <div class="modal_content"  >
+     
+      <h2><축제 안내 사항></h2>
+      <br>
+      <h4>교내 셔틀버스 운행구간 변경</h4>
+          <br>
+        - 00:00~ 00:00 
+          <br> <br> 
+        <h4> 일반차량 및 주차통제</h4>
+          <br>
+        - 00:00~ 00:00
+          <br><br>
+             - 도서관 위로 차량통제
+             <br>
+             - 도서관~ 양측 통행로
+             <br>
+             - 부스앞 주차 통제
+          <br><br>
+          <h4>기숙사 통금 연장</h4>
+          <br>
+              <00:00~00:00>
+          <br>
+              <00:00~00:00>
+            
+
+      <button type="button" id="modal_close_btn">창 닫기</button>
+    </div>
+
+    <div class="modal_layer" ></div>
+  </div>
+<main role="main" class="inner cover">
+   
+    <h1 class="cover-heading">축제 일정</h1>
+    <p class="lead">
+      <table class="table table-hover" border= "3px">
+        <tr style=background-color:black;>
+            <th>DAY</th>
+            <th>TIME</th>
+            <th>PROGRAM</th>
+        </tr>
+        <tr>
+        <td>9월 20일</td>
+        <td>00:00~ 00:00</td>
+        <td>레드벨벳 공연</td>
+      </tr>
+      <tr >
+        <td>9월 21일</td>
+        <td>00:00~ 00:00</td>
+        <td> 공연</td>        
+      </tr>
+      <tr>
+        <td>9월 22일</td>
+        <td>00:00~ 00:00</td>
+        <td> 공연</td>
+      </tr>
+      </table>
+    </p>
+
+
+   <div id="root">
+     <p class="lead">
+        <button id="modal_open_btn" class="btn btn-lg btn-secondary">축제 안내 사항</button>
+      </p>
+    </div>
+
+
+ 
+  <script>
+      document.getElementById("modal_open_btn").onclick = function(){
+      document.getElementById("modal").style.display="block";
+    }
+    document.getElementById("modal_close_btn").onclick = function(){
+      document.getElementById("modal").style.display="none";
+    }
+  </script>
+  </main>
+
+<br><br><br><br><br><br>
+</body>
+</html>
+
+{% endblock %}
